@@ -32,3 +32,8 @@ jobs:
         run: pip3 install scrapy
       - name: Run Scraper
         run: scrapy crawl qa_practice -O qa.json
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: json output
+          path: qa.json
